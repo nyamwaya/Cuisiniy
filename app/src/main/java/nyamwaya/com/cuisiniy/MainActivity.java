@@ -8,45 +8,66 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import nyamwaya.com.cuisiniy.models.BottomViewModel;
+
 public class MainActivity extends AppCompatActivity {
 
-    private TextView textSearch;
-    private TextView textCamera;
-    private TextView textAccount;
-    private BottomNavigationView bottomNavigationView;
+    private TextView mSearchText;
+    private TextView mCameraText;
+    private TextView mAccountText;
+    private BottomViewModel bottomViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textSearch = (TextView) findViewById(R.id.text_search);
-        textCamera = (TextView) findViewById(R.id.text_camera);
-        textAccount = (TextView) findViewById(R.id.text_account);
+        renderSearchText();
+        renderCameraText();
+        renderAccountText();
+        renderBottomView();
 
-        bottomNavigationView =(BottomNavigationView) findViewById(R.id.bottom_navigation);
+
+
+    }
+
+    private void renderSearchText(){
+        mSearchText = bottomViewModel.getTextSearch();
+        mSearchText = (TextView)(findViewById(R.id.text_search));
+    }
+    private void renderCameraText(){
+        mCameraText = bottomViewModel.getTextCamera();
+        mCameraText = (TextView)(findViewById(R.id.text_camera));
+    }
+    private void renderAccountText(){
+        mAccountText = bottomViewModel.getTextAccount();
+        mCameraText = (TextView)(findViewById(R.id.text_account));
+    }
+    private void renderBottomView(){
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.action_search:
-                        textSearch.setVisibility(View.VISIBLE);
-                        textCamera.setVisibility(View.GONE);
-                        textAccount.setVisibility(View.GONE);
+                        mSearchText.setVisibility(View.VISIBLE);
+                        mCameraText.setVisibility(View.GONE);
+                        mAccountText.setVisibility(View.GONE);
                         break;
                     case R.id.action_camera:
-                        textSearch.setVisibility(View.GONE);
-                        textCamera.setVisibility(View.VISIBLE);
-                        textAccount.setVisibility(View.GONE);
+                        mSearchText.setVisibility(View.GONE);
+                        mCameraText.setVisibility(View.VISIBLE);
+                        mAccountText.setVisibility(View.GONE);
                         break;
                     case R.id.action_account:
-                        textSearch.setVisibility(View.GONE);
-                        textCamera.setVisibility(View.GONE);
-                        textAccount.setVisibility(View.VISIBLE);
+                        mSearchText.setVisibility(View.GONE);
+                        mCameraText.setVisibility(View.GONE);
+                        mAccountText.setVisibility(View.VISIBLE);
                         break;
                 }
                 return false;
             }
         });
     }
+
 }
