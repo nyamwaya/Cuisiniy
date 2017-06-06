@@ -8,41 +8,26 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import nyamwaya.com.cuisiniy.models.BottomViewModel;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView mSearchText;
     private TextView mCameraText;
     private TextView mAccountText;
-    private BottomViewModel bottomViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        renderSearchText();
-        renderCameraText();
-        renderAccountText();
+        mSearchText = (TextView) findViewById(R.id.text_search);
+        mCameraText = (TextView)(findViewById(R.id.text_camera));
+        mAccountText = (TextView)(findViewById(R.id.text_account));
+
         renderBottomView();
 
-
-
     }
 
-    private void renderSearchText(){
-        mSearchText = bottomViewModel.getTextSearch();
-        mSearchText = (TextView)(findViewById(R.id.text_search));
-    }
-    private void renderCameraText(){
-        mCameraText = bottomViewModel.getTextCamera();
-        mCameraText = (TextView)(findViewById(R.id.text_camera));
-    }
-    private void renderAccountText(){
-        mAccountText = bottomViewModel.getTextAccount();
-        mCameraText = (TextView)(findViewById(R.id.text_account));
-    }
     private void renderBottomView(){
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
