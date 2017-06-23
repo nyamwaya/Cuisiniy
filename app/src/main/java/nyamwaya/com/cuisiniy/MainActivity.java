@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import nyamwaya.com.cuisiniy.ui.AccountFragment;
 import nyamwaya.com.cuisiniy.ui.CameraFragment;
+import nyamwaya.com.cuisiniy.ui.HomeFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.action_home:
+                        fragmentTracsaction(new HomeFragment());
 
                         break;
                     case R.id.action_camera:
