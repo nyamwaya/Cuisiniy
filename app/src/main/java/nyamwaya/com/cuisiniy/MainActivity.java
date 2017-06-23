@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import nyamwaya.com.cuisiniy.ui.AccountFragment;
 import nyamwaya.com.cuisiniy.ui.CameraFragment;
 
 
@@ -40,9 +41,7 @@ public class MainActivity extends AppCompatActivity {
                         fragmentTracsaction(new CameraFragment());
                         break;
                     case R.id.action_account:
-                      /*  mSearchText.setVisibility(View.GONE);
-                        mCameraText.setVisibility(View.GONE);
-                        mAccountText.setVisibility(View.VISIBLE);*/
+                        fragmentTracsaction(new AccountFragment());
                         break;
                 }
                 return false;
