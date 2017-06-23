@@ -1,4 +1,4 @@
-package nyamwaya.com.cuisiniy;
+package nyamwaya.com.cuisiniy.ui;
 
 import android.support.v4.app.Fragment;
 

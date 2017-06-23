@@ -2,12 +2,14 @@ package nyamwaya.com.cuisiniy;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
+
+import nyamwaya.com.cuisiniy.ui.CameraFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -21,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        fragmentTracsaction();
         renderBottomView();
 
     }
@@ -33,15 +33,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.action_search:
-                      /*  mSearchText.setVisibility(View.VISIBLE);
-                        mCameraText.setVisibility(View.GONE);
-                        mAccountText.setVisibility(View.GONE);*/
+                    case R.id.action_home:
+
                         break;
                     case R.id.action_camera:
-                     /*   mSearchText.setVisibility(View.GONE);
-                        mCameraText.setVisibility(View.VISIBLE);
-                        mAccountText.setVisibility(View.GONE);*/
+                        fragmentTracsaction(new CameraFragment());
                         break;
                     case R.id.action_account:
                       /*  mSearchText.setVisibility(View.GONE);
@@ -54,11 +50,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void fragmentTracsaction() {
+    private void fragmentTracsaction(Fragment fragment) {
         // Begin the transaction
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         // Replace the contents of the container with the new fragment
-        ft.replace(R.id.your_placeholder, new CameraFragment());
+        ft.replace(R.id.your_placeholder, fragment);
         // or ft.add(R.id.your_placeholder, new FooFragment());
         // Complete the changes added above
         ft.commit();
