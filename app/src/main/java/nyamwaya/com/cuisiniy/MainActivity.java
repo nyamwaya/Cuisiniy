@@ -21,10 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mSearchText = (TextView) findViewById(R.id.text_search);
-        mCameraText = (TextView) (findViewById(R.id.text_camera));
-        mAccountText = (TextView) (findViewById(R.id.text_account));
 
+        fragmentTracsaction();
         renderBottomView();
 
     }
@@ -36,19 +34,19 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.action_search:
-                        mSearchText.setVisibility(View.VISIBLE);
+                      /*  mSearchText.setVisibility(View.VISIBLE);
                         mCameraText.setVisibility(View.GONE);
-                        mAccountText.setVisibility(View.GONE);
+                        mAccountText.setVisibility(View.GONE);*/
                         break;
                     case R.id.action_camera:
-                        mSearchText.setVisibility(View.GONE);
+                     /*   mSearchText.setVisibility(View.GONE);
                         mCameraText.setVisibility(View.VISIBLE);
-                        mAccountText.setVisibility(View.GONE);
+                        mAccountText.setVisibility(View.GONE);*/
                         break;
                     case R.id.action_account:
-                        mSearchText.setVisibility(View.GONE);
+                      /*  mSearchText.setVisibility(View.GONE);
                         mCameraText.setVisibility(View.GONE);
-                        mAccountText.setVisibility(View.VISIBLE);
+                        mAccountText.setVisibility(View.VISIBLE);*/
                         break;
                 }
                 return false;
@@ -60,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         // Begin the transaction
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         // Replace the contents of the container with the new fragment
-        ft.replace(R.id.your_placeholder, new FooFragment());
+        ft.replace(R.id.your_placeholder, new CameraFragment());
         // or ft.add(R.id.your_placeholder, new FooFragment());
         // Complete the changes added above
         ft.commit();
