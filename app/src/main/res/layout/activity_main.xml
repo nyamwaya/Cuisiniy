@@ -6,10 +6,12 @@
 
     <!-- for dynamic fragments -->
     <FrameLayout
-        android:id="@+id/your_placeholder"
+        android:id="@+id/homefragments"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </FrameLayout>
+
+    <include layout="@layout/cameracontent"/>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation"
