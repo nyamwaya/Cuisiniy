@@ -34,4 +34,5 @@ dependencies {
 
     //camera libbarry
     compile 'com.github.florent37:camerafragment:1.0.7'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 }
