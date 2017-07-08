@@ -3,4 +3,7 @@
     <string name="text_search">Search</string>
     <string name="text_camera">Camera</string>
     <string name="text_account">Account</string>
+    <string name="facebook_app_id">278349332639162</string>
+    <string name="fb_login_protocol_scheme">fb278349332639162</string>
+    <string name="title_activity_sign_in_view">SignInView</string>
 </resources>

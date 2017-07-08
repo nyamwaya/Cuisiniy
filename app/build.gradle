@@ -17,6 +17,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/java/cuisini/com/foodio/Views', 'src/main/java/Models', 'src/main/java/Presenters', 'src/main/java/cuisiniy/com/foodio/Models', 'src/main/java/cuisiniy/com/foodio/Presenters']
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
 }
 
 dependencies {
@@ -24,9 +33,13 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
+
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
-    testCompile 'junit:junit:4.12'
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.google.firebase:firebase-auth:11.0.2'
+    compile 'com.facebook.android:facebook-android-sdk:[4,5)'
+    testCompile 'junit:junit:4.12'
 }
