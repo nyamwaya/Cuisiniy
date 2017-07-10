@@ -1,55 +1,56 @@
 package nyamwaya.com.cuisiniy;
 
-import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
 
+import nyamwaya.com.cuisiniy.fragments.HomeFragment;
 import nyamwaya.com.cuisiniy.ui.CameraActivity;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mSearchText;
-    private TextView mCameraText;
-    private TextView mAccountText;
+    private BottomNavigationView mBottomNavigationView;
+    private FragmentManager mFragmentManager;
+    private Fragment mFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mSearchText = (TextView) findViewById(R.id.text_search);
-        mCameraText = (TextView)(findViewById(R.id.text_camera));
-        mAccountText = (TextView)(findViewById(R.id.text_account));
+
+        mBottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        mFragmentManager = getSupportFragmentManager();
+        mFragment = new HomeFragment();
+        final FragmentTransaction transaction = mFragmentManager.beginTransaction();
+        transaction.add(R.id.main_container, mFragment).commit();
+
+
 
         renderBottomView();
 
     }
 
-    private void renderBottomView(){
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+    private void renderBottomView() {
+        mBottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.action_search:
-                        mSearchText.setVisibility(View.VISIBLE);
-                        mCameraText.setVisibility(View.GONE);
-                        mAccountText.setVisibility(View.GONE);
+                        mFragment = new HomeFragment();
                         break;
                     case R.id.action_camera:
                         launchActivity(CameraActivity.class);
                         break;
                     case R.id.action_account:
-                        mSearchText.setVisibility(View.GONE);
-                        mCameraText.setVisibility(View.GONE);
-                        mAccountText.setVisibility(View.VISIBLE);
                         break;
                 }
                 return false;
@@ -57,10 +58,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
-    private void launchActivity(Class<CameraActivity> activity){
+    private void launchActivity(Class<CameraActivity> activity) {
         Intent mIntent = new Intent(MainActivity.this, activity);
         startActivity(mIntent);
     }
-
 }
