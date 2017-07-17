@@ -20,10 +20,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mSearchText = (TextView) findViewById(R.id.text_search);
-        mCameraText = (TextView)(findViewById(R.id.text_camera));
-        mAccountText = (TextView)(findViewById(R.id.text_account));
 
+        renderTextViews();
         renderBottomView();
 
     }
@@ -53,6 +51,12 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    private void renderTextViews(){
+        mSearchText = (TextView) findViewById(R.id.text_search);
+        mCameraText = (TextView)(findViewById(R.id.text_camera));
+        mAccountText = (TextView)(findViewById(R.id.text_account));
     }
 
 }
