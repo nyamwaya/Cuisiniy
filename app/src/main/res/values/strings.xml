@@ -3,4 +3,7 @@
     <string name="text_search">Search</string>
     <string name="text_camera">Camera</string>
     <string name="text_account">Account</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
