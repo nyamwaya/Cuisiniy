@@ -9,4 +9,9 @@
     <color name="colorSecondaryText">#757575</color>
     <color name="colorIcons">#FFFFFF</color>
     <color name="colorDivider">#BDBDBD</color>
+
+
+    <color name="gradientStart">#ff0000</color>
+    <color name="gradientMiddle">#ff9a00</color>
+    <color name="gradientEnd">#f0ff00</color>
 </resources>
