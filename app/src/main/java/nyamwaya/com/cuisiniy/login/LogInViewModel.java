@@ -5,4 +5,11 @@ package nyamwaya.com.cuisiniy.login;
  */
 
 public class LogInViewModel {
+
+    public LogInViewModel() {
+    }
+
+
+
+    
 }

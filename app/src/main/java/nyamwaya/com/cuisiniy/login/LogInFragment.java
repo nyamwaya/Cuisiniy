@@ -1,4 +1,4 @@
-package nyamwaya.com.cuisiniy;
+package nyamwaya.com.cuisiniy.login;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -8,10 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import nyamwaya.com.cuisiniy.R;
+
 
 public class LogInFragment extends Fragment {
 
     private ImageView mLogInButton;
+    private LogInViewModel mLogInViewModel;
 
 
 
@@ -23,6 +26,7 @@ public class LogInFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mLogInViewModel = new LogInViewModel();
 
     }
 
