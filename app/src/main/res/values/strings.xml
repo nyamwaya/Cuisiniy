@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">"Cuisiniy "</string>
+    <string name="app_name">"Cuisiniy"</string>
     <string name="text_search">Search</string>
-    <string name="text_camera">Camera</string>
-    <string name="text_account">Account</string>
+    <string name="text_community">Community</string>
+    <string name="text_account">Profile</string>
+    <string name="lorem">Top 10 Rappers Alive: Kendrick Lamar, Big Sean, A$AP Rocky, Rockie Fresh, Isaiah Rashad,Nas, Meek Mill, BIG Krit, Migos, Lil Wayne.</string>
+    <string name="search_by">search by</string>
+    <string name="search">Search</string>
 </resources>

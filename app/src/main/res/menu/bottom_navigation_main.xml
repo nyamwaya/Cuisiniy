@@ -2,21 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/action_account"
+        android:enabled="true"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="@string/text_account"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/action_search"
         android:enabled="true"
         android:icon="@drawable/ic_search_white_24dp"
         android:title="@string/text_search"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_camera"
+        android:id="@+id/action_community"
         android:enabled="true"
-        android:icon="@drawable/ic_camera_white_24dp"
-        android:title="@string/text_camera"
+        android:icon="@drawable/ic_group_black_24dp"
+        android:title="@string/text_community"
         app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/action_account"
-        android:enabled="true"
-        android:icon="@drawable/ic_account_circle_white_24dp"
-        android:title="@string/text_account"
-        app:showAsAction="ifRoom" />
+
 </menu>
