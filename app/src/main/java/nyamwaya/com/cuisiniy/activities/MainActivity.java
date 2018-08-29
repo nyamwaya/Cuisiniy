@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import nyamwaya.com.cuisiniy.R;
+import nyamwaya.com.cuisiniy.fragments.CommunityFragment;
 import nyamwaya.com.cuisiniy.fragments.HomeFragment;
 import nyamwaya.com.cuisiniy.fragments.ProfileFragment;
 
@@ -26,11 +27,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         mFragmentManager = getSupportFragmentManager();
         final FragmentTransaction transaction = mFragmentManager.beginTransaction();
-        mBottomNavigationView = findViewById(R.id.bottom_navigation);
+        mBottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
 
         renderBottomView();
     }
@@ -43,14 +44,17 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
 
-                    case R.id.action_account:
-                        mFragment= new ProfileFragment();
-                        break;
                     case R.id.action_search:
                         mFragment= new HomeFragment();
                         break;
-                    /*case R.id.action_camera:
-                        break;*/
+
+                    case R.id.action_account:
+                        mFragment= new ProfileFragment();
+                        break;
+
+                    case R.id.action_community:
+                        mFragment = new CommunityFragment();
+                        break;
                 }
                 final FragmentTransaction transaction = mFragmentManager.beginTransaction();
                 transaction.replace(R.id.main_container, mFragment).commit();

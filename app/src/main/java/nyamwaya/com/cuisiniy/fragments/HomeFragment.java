@@ -3,7 +3,6 @@ package nyamwaya.com.cuisiniy.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -14,10 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
-import br.com.mauker.materialsearchview.MaterialSearchView;
 import nyamwaya.com.cuisiniy.R;
 
 /**
@@ -30,30 +26,26 @@ public class HomeFragment extends Fragment implements SearchView.OnQueryTextList
     private RecyclerView mRecyclerView;
     private LinearLayoutManager mLinearLayoutManager;
 
-    public static HomeFragment newInstance() {
-        HomeFragment fragment = new HomeFragment();
-        return fragment;
-    }
-
+    
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        mToolbar =  view.findViewById(R.id.searchToolbar);
-        mToolbar.inflateMenu(R.menu.search_toolbar);
+        mToolbar = view.findViewById(R.id.searchToolbar);
+        mToolbar.inflateMenu(R.menu.toolbar_home);
 
-        mRecyclerView = view.findViewById(R.id.recyclerView);
+        mRecyclerView = view.findViewById(R.id.searchRecyclerView);
         return view;
     }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.search_toolbar, menu);
-        MenuItem searchItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) searchItem.getActionView();
-        searchView.setOnQueryTextListener(this);
-        searchView.setQueryHint("Search");
+        inflater.inflate(R.menu.toolbar_default, menu);
+//        MenuItem searchItem = menu.findItem(R.id.action_search);
+//        SearchView searchView = (SearchView) searchItem.getActionView();
+//        searchView.setOnQueryTextListener(this);
+//        searchView.setQueryHint("Search");
 
         super.onCreateOptionsMenu(menu, inflater);
     }
