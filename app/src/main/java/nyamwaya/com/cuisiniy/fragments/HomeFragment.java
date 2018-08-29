@@ -26,20 +26,16 @@ public class HomeFragment extends Fragment implements SearchView.OnQueryTextList
     private RecyclerView mRecyclerView;
     private LinearLayoutManager mLinearLayoutManager;
 
-    public static HomeFragment newInstance() {
-        HomeFragment fragment = new HomeFragment();
-        return fragment;
-    }
-
+    
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        mToolbar = (Toolbar) view.findViewById(R.id.searchToolbar);
+        mToolbar = view.findViewById(R.id.searchToolbar);
         mToolbar.inflateMenu(R.menu.toolbar_home);
 
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.searchRecyclerView);
+        mRecyclerView = view.findViewById(R.id.searchRecyclerView);
         return view;
     }
 
