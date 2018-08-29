@@ -2,9 +2,9 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/background_light"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/background_light"
     android:fitsSystemWindows="true">
 
     <android.support.design.widget.AppBarLayout
@@ -18,16 +18,16 @@
             android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
             android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:contentScrim="?android:attr/colorPrimary"
             app:expandedTitleMarginStart="48dp"
             app:expandedTitleMarginEnd="64dp">
 
             <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/profileToolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="?android:attr/actionBarSize"
                 app:layout_scrollFlags="scroll|snap"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:layout_collapseMode="pin"/>
@@ -39,21 +39,23 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_image"
-                android:background="@color/colorPrimary"
                 android:layout_width="125dp"
                 android:layout_height="125dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_account_circle_white_24dp"
+                android:background="@color/colorPrimary"
+                android:src="@drawable/ic_person_white_24dp"
                 app:civ_border_color="#FFFFFF"
                 app:civ_border_width="2dp"/>
 
         </android.support.design.widget.CollapsingToolbarLayout>
+
         <android.support.design.widget.TabLayout
             android:id="@+id/tab"
             android:background="@color/colorPrimary"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
         </android.support.design.widget.TabLayout>
+
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
@@ -67,7 +69,7 @@
             android:textSize="20sp"
             android:lineSpacingExtra="8dp"
             android:text="@string/lorem"
-            android:padding="@dimen/activity_horizontal_margin"/>
+            android:padding="16dp" />
 
     </android.support.v4.widget.NestedScrollView>
 
